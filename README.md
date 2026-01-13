@@ -15,10 +15,10 @@ A secure and efficient **Image Steganography System** developed in **C language*
 💾 No visible change in original image quality
 
 
-
 ⚙️ How to Compile & Run
 
 🧰 Using GCC (Linux / WSL / MinGW)
+
 
 🔹 Compile
 
@@ -26,16 +26,19 @@ A secure and efficient **Image Steganography System** developed in **C language*
 gcc encode.c decode.c test_encode.c -o steganography
 ```
 
+
 🔹 Encoding (Hide Message)
 
 ```bash
 ./steganography -e BMW.bmp secret.txt stego.bmp
 ```
 
+
 🔹 Decoding (Extract Message)
 
 ```bash
 ./steganography -d stego.bmp decoded.txt
+```
 
 
 📁 File Structure
@@ -53,13 +56,6 @@ gcc encode.c decode.c test_encode.c -o steganography
 | `decoded.txt`         | Output file with extracted message             |
 
 
-| File                      | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| main.c                    | Entry point and menu handling                          |
-|  contact.c  /  contact.h  | Core contact management (add, delete, search, edit)    |
-|  file.c  /  file.h        | Handles CSV read/write for saving and loading contacts |
-|  validate.c               | Validates user input (phone numbers, names, etc.)      |
-|  contacts.csv             | Stores all saved contact data                          |
 
 
 🧑‍💻 Key Concepts Used
