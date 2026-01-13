@@ -53,6 +53,14 @@ gcc encode.c decode.c test_encode.c -o steganography
 | `decoded.txt`         | Output file with extracted message             |
 
 
+| File                      | Description                                            |
+| ------------------------- | ------------------------------------------------------ |
+| main.c                    | Entry point and menu handling                          |
+|  contact.c  /  contact.h  | Core contact management (add, delete, search, edit)    |
+|  file.c  /  file.h        | Handles CSV read/write for saving and loading contacts |
+|  validate.c               | Validates user input (phone numbers, names, etc.)      |
+|  contacts.csv             | Stores all saved contact data                          |
+
 
 🧑‍💻 Key Concepts Used
 
