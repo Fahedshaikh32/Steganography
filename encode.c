@@ -46,11 +46,13 @@ uint get_file_size(FILE *fptr)
     //Move file pointer to the end of the file
     if (fseek(fptr, 0, SEEK_END) != 0) return 0;
     
-    //
+    //Get the current position(file size)
     size = ftell(fptr);
+
+    //check for the empty file or ftell() failure
     if (size <= 0)
     {
-        rewind(fptr);
+        rewind(fptr);       //reset file pointer
         return 0;
     }
     rewind(fptr);
