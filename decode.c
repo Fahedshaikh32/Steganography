@@ -25,6 +25,7 @@ static void delay_ms(int milliseconds)
 /* ========================= INPUT VALIDATION ========================= */
 Status read_and_validate_decode_args(char *argv[], DecodeInfo *decInfo)
 {
+    //Validate input image extension
     if (strstr(argv[2], ".bmp") != NULL)
         decInfo->out_image_fname = argv[2];
     else
@@ -33,10 +34,15 @@ Status read_and_validate_decode_args(char *argv[], DecodeInfo *decInfo)
         return e_failure;
     }
 
+    //Check whether output filename is provided
     if (argv[3] == NULL)
+    {   
+        //Use default filename if not specified
         decInfo->secret_fname = "decoded";
+    }
     else
     {
+        //Remove extension from output filename
         char *dot = strchr(argv[3], '.');
         if (dot != NULL) *dot = '\0';
         decInfo->secret_fname = argv[3];
