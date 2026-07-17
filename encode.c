@@ -37,11 +37,16 @@ uint get_image_size_for_bmp(FILE *fptr_image)
 
 /* ===================== SECRET FILE SIZE FETCHING - return 0 on failure ===================== */
 uint get_file_size(FILE *fptr)
-{
+{   
+    //Validate file pointer
     if (!fptr) return 0;
 
     long size;
+
+    //Move file pointer to the end of the file
     if (fseek(fptr, 0, SEEK_END) != 0) return 0;
+    
+    //
     size = ftell(fptr);
     if (size <= 0)
     {
