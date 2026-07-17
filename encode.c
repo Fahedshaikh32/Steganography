@@ -55,7 +55,11 @@ uint get_file_size(FILE *fptr)
         rewind(fptr);       //reset file pointer
         return 0;
     }
+
+    //Restore file pointer to the beginning
     rewind(fptr);
+
+    //Return the size of the secret file
     return (uint)size;
 }
 
