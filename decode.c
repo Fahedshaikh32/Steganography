@@ -44,7 +44,12 @@ Status read_and_validate_decode_args(char *argv[], DecodeInfo *decInfo)
     {
         //Remove extension from output filename
         char *dot = strchr(argv[3], '.');
-        if (dot != NULL) *dot = '\0';
+        if (dot != NULL)
+        {
+            //Store output filename 
+            *dot = '\0';
+        
+        }
         decInfo->secret_fname = argv[3];
     }
 
@@ -53,7 +58,8 @@ Status read_and_validate_decode_args(char *argv[], DecodeInfo *decInfo)
 
 /* ========================= OPEN ENCODED IMAGE ========================= */
 Status open_output_image_file(DecodeInfo *decInfo)
-{
+{   
+    //Open the encoded image in the binary read mode
     decInfo->fptr_out_image = fopen(decInfo->out_image_fname, "rb");
     if (decInfo->fptr_out_image == NULL)
     {
